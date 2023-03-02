@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("HOME");
 });
 
-//국가 통화코드 currency1, currency2 받으면, exchangeRate값 보내기
+//국가 통화코드 currency1(currencyCodeFrom), currency2(currencyCodeTo) 받으면, exchangeRate, date 보내기
 app.post("/api/:currency1/:currency2", (req, res) => {
   // app.post("/api/:currency", (req, res) => {
   // const currency1 = "USD";
@@ -29,48 +29,22 @@ app.post("/api/:currency1/:currency2", (req, res) => {
 
   request.onload = function () {
     const response = request.response;
+    // console.log(response)
+    const date = response.date;
     const exchangeRate = response.info.rate;
-    res.send(`${exchangeRate}`);
+    res.send({exchangeRate, date});
     // console.log(exchangeRate)
   };
 });
 
-//date, currencylist 보내기
-app.get("/currencylist", (req, res) => {
-  const currency = "USD";
-  const requestURL = `https://api.exchangerate.host/latest?base=${currency}`;
-  const request = new XMLHttpRequest();
-  request.open("GET", requestURL);
-  request.responseType = "json";
-  request.send();
-
-  request.onload = function () {
-    const response = request.response;
-    // console.log(response);
-    const date = response.date;
-    const currencyList = Object.keys(response.rates);
-    // res.send(date);
-    // res.send(currencyList);
-    res.send({ date, currencyList });
-  };
-});
-
-//국가, 통화단위(symbols) 보내기
-app.get("/nationlist", (req, res) => {
-  const requestURL = "https://api.exchangerate.host/symbols";
-  const request = new XMLHttpRequest();
-  request.open("GET", requestURL);
-  request.responseType = "json";
-  request.send();
-
-  request.onload = function () {
-    const response = request.response;
-    // console.log(response.symbols)
-    const data = Object.values(response.symbols);
-    // console.log(data);
-    res.send(data);
-  };
-});
+//국가, 통화단위 보내기
+//select ver.2 - currencyNationList.json
+//http://shancarter.github.io/mr-data-converter/ 에서 표를 JSON-Dictionary 로 변환
+const listData = require('./currencyNationList.json');
+app.get("/currencynationlist", (req, res) => {
+  const data = listData
+  res.send({...data})
+})
 
 //서버 실행
 app.listen(port, () => {
