@@ -6,7 +6,11 @@ const XMLHttpRequest = require("xhr2");
 //cors 추가하면 ajax 잘됨 npm install cors
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credential: true
+}
+app.use(cors(corsOptions));
 
 app.use(express.static("public"));
 
