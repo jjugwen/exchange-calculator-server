@@ -14,14 +14,10 @@ app.get("/", (req, res) => {
   res.send("HOME");
 });
 
-//국가 통화코드 currency1(currencyCodeFrom), currency2(currencyCodeTo) 받으면, exchangeRate, date 보내기
-app.post("/api/:currency1/:currency2", (req, res) => {
-  // app.post("/api/:currency", (req, res) => {
-  // const currency1 = "USD";
-  // const currency2 = "KRW";
-  // console.log(req.params);
-  const { currency1, currency2 } = req.params;
-  const requestURL = `https://api.exchangerate.host/convert?from=${currency1}&to=${currency2}`;
+//국가 통화코드 from(currencyCodeFrom), to(currencyCodeTo) 받으면, exchangeRate, date 보내기
+app.post("/api", (req, res) => {
+  const { from, to } = req.query;
+  const requestURL = `https://api.exchangerate.host/convert?from=${from}&to=${to}`;
   const request = new XMLHttpRequest();
   request.open("GET", requestURL);
   request.responseType = "json";
@@ -29,11 +25,9 @@ app.post("/api/:currency1/:currency2", (req, res) => {
 
   request.onload = function () {
     const response = request.response;
-    // console.log(response)
     const date = response.date;
     const exchangeRate = response.info.rate;
     res.send({exchangeRate, date});
-    // console.log(exchangeRate)
   };
 });
 
