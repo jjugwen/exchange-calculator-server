@@ -32,34 +32,9 @@
   "19": { "currencyCode": "DKK", "currencyName": "크로나", "nation": "덴마크" },
   "20": { "currencyCode": "MXN", "currencyName": "페소", "nation": "멕시코" },
   "21": { "currencyCode": "MNT", "currencyName": "투그릭", "nation": "몽골" },
-  "22": { "currencyCode": "BHD", "currencyName": "디나르", "nation": "바레인" },
-  "23": {
-    "currencyCode": "BDT",
-    "currencyName": "타카",
-    "nation": "방글라데시"
-  },
   "24": { "currencyCode": "BRL", "currencyName": "헤알", "nation": "브라질" },
-  "25": { "currencyCode": "BND", "currencyName": "달러", "nation": "브루나이" },
-  "26": {
-    "currencyCode": "SAR",
-    "currencyName": "리얄",
-    "nation": "사우디아라비아"
-  },
-  "27": { "currencyCode": "LKR", "currencyName": "루피", "nation": "스리랑카" },
   "28": { "currencyCode": "SEK", "currencyName": "크로나", "nation": "스웨덴" },
   "29": { "currencyCode": "CHF", "currencyName": "프랑", "nation": "스위스" },
-  "30": {
-    "currencyCode": "AED",
-    "currencyName": "디르함",
-    "nation": "아랍에미리트공화국"
-  },
-  "31": {
-    "currencyCode": "DZD",
-    "currencyName": "알제리 디나르",
-    "nation": "알제리"
-  },
-  "32": { "currencyCode": "OMR", "currencyName": "리얄", "nation": "오만" },
-  "33": { "currencyCode": "JOD", "currencyName": "디나르", "nation": "요르단" },
   "34": { "currencyCode": "ILS", "currencyName": "셰켈", "nation": "이스라엘" },
   "35": { "currencyCode": "EGP", "currencyName": "파운드", "nation": "이집트" },
   "36": { "currencyCode": "INR", "currencyName": "루피", "nation": "인도" },
@@ -69,23 +44,9 @@
     "nation": "인도네시아"
   },
   "38": { "currencyCode": "CZK", "currencyName": "코루나", "nation": "체코" },
-  "39": { "currencyCode": "CLP", "currencyName": "페소", "nation": "칠레" },
-  "40": {
-    "currencyCode": "KZT",
-    "currencyName": "텡게",
-    "nation": "카자흐스탄"
-  },
-  "41": { "currencyCode": "QAR", "currencyName": "리얄", "nation": "카타르" },
-  "42": { "currencyCode": "KES", "currencyName": "실링", "nation": "케냐" },
   "43": { "currencyCode": "COP", "currencyName": "페소", "nation": "콜롬비아" },
-  "44": {
-    "currencyCode": "KWD",
-    "currencyName": "디나르",
-    "nation": "쿠웨이트"
-  },
   "45": { "currencyCode": "TZS", "currencyName": "실링", "nation": "탄자니아" },
-  "46": { "currencyCode": "TRY", "currencyName": "리라", "nation": "터어키" },
-  "47": { "currencyCode": "PKR", "currencyName": "루피", "nation": "파키스탄" },
+  "46": { "currencyCode": "TRY", "currencyName": "리라", "nation": "튀르키예" },
   "48": { "currencyCode": "PLN", "currencyName": "즈워티", "nation": "폴란드" },
   "49": { "currencyCode": "HUF", "currencyName": "포린트", "nation": "헝가리" },
   "50": { "currencyCode": "KRW", "currencyName": "원", "nation": "대한민국" }
