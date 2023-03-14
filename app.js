@@ -28,13 +28,9 @@ fetch('https://api.exchangerate.host/latest?base=USD')
 app.post("/api", (req, res) => {
   // console.log("post", date, rates)
   const { from, to } = req.query;
-  if(from === "USD"){
-    let exchangeRate = rates[to];
-    res.send({exchangeRate, date})
-  } else {
-    let exchangeRate = rates[to]/rates[from]
-    res.send({exchangeRate, date})
-  }  
+  let exchangeRate;
+  (from === "USD") ? exchangeRate = rates[to] : exchangeRate = rates[to]/rates[from];
+  res.send({exchangeRate, date})
 });
 
 //국가, 통화단위 보내기
